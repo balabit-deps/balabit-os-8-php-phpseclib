@@ -1,0 +1,3 @@
+version=3
+options="uversionmangle=s/a/~alpha/i;s/b/~beta/i;s/rc/~rc/i" \
+https://github.com/phpseclib/phpseclib/releases .*/archive/(.+).tar.gz

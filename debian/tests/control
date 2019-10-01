@@ -1,0 +1,6 @@
+Test-command: phpcs -s --extensions=php --standard=build/code-sniffer-ruleset.xml /usr/share/php/phpseclib
+Depends: php-codesniffer, @
+
+Test-command: mkdir -p vendor ; phpab -o vendor/autoload.php -t debian/autoload.test.php.tpl tests ; phpunit --bootstrap vendor/autoload.php
+Restrictions: rw-build-tree
+Depends: patch, php-gmp, phpab, phpunit, @

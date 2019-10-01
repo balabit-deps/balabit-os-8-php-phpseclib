@@ -1,0 +1,8 @@
+Starting with 2.0.15, we are merging the upstream tags as
+upstream, instead of using the tarball that doesn’t ship tests.
+
+# Example to import upstream 2.0.19 version
+version=2.0.19
+# We still use the upstream branch to drop the .gitattributes file from upstream
+gbp import-ref --upstream-tag=%\(version%~%-\)s -u$version --debian-branch=upstream
+gbp import-ref --upstream-tree=BRANCH -u$version

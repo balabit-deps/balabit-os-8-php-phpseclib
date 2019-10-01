@@ -1,0 +1,22 @@
+From: =?utf-8?q?David_Pr=C3=A9vot?= <taffit@debian.org>
+Date: Mon, 11 Mar 2019 17:00:31 -1000
+Subject: Adapt to recent PHPUnit
+
+Forwarded: no
+---
+ tests/Functional/Net/SFTPUserStoryTest.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tests/Functional/Net/SFTPUserStoryTest.php b/tests/Functional/Net/SFTPUserStoryTest.php
+index 5767eb9..de430ac 100644
+--- a/tests/Functional/Net/SFTPUserStoryTest.php
++++ b/tests/Functional/Net/SFTPUserStoryTest.php
+@@ -160,7 +160,7 @@ class Functional_Net_SFTPUserStoryTest extends PhpseclibFunctionalTestCase
+         return $sftp;
+     }
+ 
+-    static function callback($length)
++    static function callback(callable $length): PHPUnit\Framework\Constraint\Callback
+     {
+         $r = substr(self::$buffer, 0, $length);
+         self::$buffer = substr(self::$buffer, $length);
